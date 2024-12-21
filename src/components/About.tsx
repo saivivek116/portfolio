@@ -42,9 +42,9 @@ const About = () => {
           >
             <div className="absolute inset-0 bg-gradient-to-b from-transparent to-blue-600/20 group-hover:to-blue-600/30 transition-all duration-300" />
             <img
-              src="/your-profile-image.jpg" // You'll need to add your image
+              src="/images/profile.webp" // You'll need to add your image
               alt="Sai Vivek Vangaveti"
-              className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300"
+              className="w-full h-full object-cover object-top transform group-hover:scale-105 transition-transform duration-300"
             />
           </motion.div>
           <motion.div
@@ -55,10 +55,7 @@ const About = () => {
           >
             <h3 className="text-2xl font-semibold mb-4">Who I Am</h3>
             <p className="text-gray-600 mb-6">
-              I'm a full-stack developer with around 3 years of hands-on experience in building scalable and reliable
-              software solutions. Currently pursuing my Master's in Computer Science at George Mason University,
-              I'm working as a Research Assistant on a NASA-funded project. I specialize in React, Spring Boot,
-              and cloud technologies, with a strong focus on creating efficient and maintainable solutions.
+              I am a full-stack developer with around 3 years of hands-on experience in building scalable and reliable software solutions. I hold a Master's degree in Computer Science from George Mason University and have worked as a Research Assistant on a NASA-funded project. I specialize in React, Spring Boot, and cloud technologies, focusing on creating efficient and maintainable solutions.
             </p>
             <div className="space-y-4">
               <div className="flex items-center">
@@ -67,7 +64,7 @@ const About = () => {
               </div>
               <div className="flex items-center">
                 <span className="w-32 font-medium">Experience:</span>
-                <span className="text-gray-600">3+ Years</span>
+                <span className="text-gray-600">2+ Years</span>
               </div>
               <div className="flex items-center">
                 <span className="w-32 font-medium">Email:</span>

@@ -4,7 +4,7 @@ const projects = [
   {
     title: 'Handshake Helper',
     description: 'Chrome extension that evaluates resume-job description matches and generates screening questions using AI',
-    image: '/handshake-helper.jpg', // You'll need to add project images
+    image: '/images/handshake.webp', // You'll need to add project images
     technologies: ['Python', 'JavaScript', 'FastAPI', 'LangChain', 'ChatGPT API'],
     githubUrl: 'https://github.com/saivivek116/handshake-helper',
     liveUrl: '',
@@ -17,7 +17,7 @@ const projects = [
   {
     title: 'Survey Master',
     description: 'Full-stack survey application with real-time progress tracking and feedback',
-    image: '/survey-master.jpg',
+    image: '/images/survey.png',
     technologies: ['JavaScript', 'Spring Boot', 'AWS', 'Docker', 'Kubernetes'],
     githubUrl: 'https://github.com/saivivek116/surveyform',
     liveUrl: '',
@@ -30,7 +30,7 @@ const projects = [
   {
     title: 'Fitness Application',
     description: 'Fitness guidance website offering personalized gym and diet plans',
-    image: '/fitness-app.jpg',
+    image: '/images/freaking-fit.webp',
     technologies: ['React', 'Firebase', 'SASS', 'React Router'],
     githubUrl: 'https://github.com/saivivek116/fitness-app',
     liveUrl: '',
@@ -43,7 +43,7 @@ const projects = [
   {
     title: 'Campus Blogs',
     description: 'Real-time blog application with dynamic chat functionality',
-    image: '/campus-blogs.jpg',
+    image: '/images/college_building.webp',
     technologies: ['Angular', 'Node.js', 'Express', 'MongoDB', 'WebSocket'],
     githubUrl: 'https://github.com/saivivek116/campus-blogs',
     liveUrl: '',
@@ -67,7 +67,7 @@ const Projects = () => {
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-fit"
                 />
               </div>
               <div className="p-6">

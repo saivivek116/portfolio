@@ -35,10 +35,10 @@ const Header = () => {
 
           {/* Social Links */}
           <div className="hidden md:flex items-center space-x-4">
-            <a href="https://github.com/saivivek116" className="text-gray-700 hover:text-gray-900">
+            <a href="https://github.com/saivivek116" target='_blank' className="text-gray-700 hover:text-gray-900">
               <Github size={20} />
             </a>
-            <a href="https://linkedin.com/in/vsaivivek" className="text-gray-700 hover:text-gray-900">
+            <a href="https://linkedin.com/in/vsaivivek" target='_blank' className="text-gray-700 hover:text-gray-900">
               <Linkedin size={20} />
             </a>
             <a href="mailto:saivivek116@gmail.com" className="text-gray-700 hover:text-gray-900">
