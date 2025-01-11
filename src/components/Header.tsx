@@ -1,8 +1,10 @@
 import React from 'react';
-import { Menu, X, Github, Linkedin, Mail } from 'lucide-react';
+import { Menu, X, Github, Linkedin, Mail, Moon, Sun } from 'lucide-react';
+import { useTheme } from '../ThemeContext';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const { theme, toggleTheme } = useTheme();
 
   const navLinks = [
     { href: "#home", text: "Home" },
@@ -44,6 +46,12 @@ const Header = () => {
             <a href="mailto:saivivek116@gmail.com" className="text-gray-700 hover:text-gray-900">
               <Mail size={20} />
             </a>
+            <button
+              onClick={toggleTheme}
+              className="p-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700"
+            >
+              {theme === 'light' ? <Moon size={20} /> : <Sun size={20} />}
+            </button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -69,6 +77,15 @@ const Header = () => {
                 {link.text}
               </a>
             ))}
+            <div className="mt-4 px-3">
+              <button
+                onClick={toggleTheme}
+                className="w-full px-4 py-2 bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-gray-100 rounded-md flex justify-center items-center"
+              >
+                {theme === 'light' ? <Moon size={20} /> : <Sun size={20} />}
+                <span className="ml-2">{theme === 'light' ? 'Dark Mode' : 'Light Mode'}</span>
+              </button>
+            </div>
           </div>
         </div>
       )}

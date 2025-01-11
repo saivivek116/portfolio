@@ -33,12 +33,12 @@ const experienceData = [
 
 const Experience = () => {
   return (
-    <section id="experience" className="py-20 bg-white">
+    <section id="experience" className="py-20 bg-white dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl font-bold text-center mb-16">Experience</h2>
+        <h2 className="text-4xl font-bold text-center mb-16 dark:text-gray-100">Experience</h2>
         <div className="space-y-8">
           {experienceData.map((exp, index) => (
-            <div key={index} className="bg-gray-50 rounded-xl p-6 shadow-md">
+            <div key={index} className="bg-gray-50 dark:bg-gray-800 rounded-xl p-6 shadow-md">
               <div className="flex items-start gap-4">
                 <div className="bg-blue-100 p-3 rounded-lg">
                   <Briefcase className="w-6 h-6 text-blue-600" />
@@ -46,20 +46,20 @@ const Experience = () => {
                 <div className="flex-1">
                   <div className="flex justify-between items-start flex-wrap gap-2">
                     <div>
-                      <h3 className="text-xl font-semibold text-gray-900">{exp.position}</h3>
-                      <p className="text-gray-600">{exp.company}</p>
+                      <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100">{exp.position}</h3>
+                      <p className="text-gray-600 dark:text-gray-300">{exp.company}</p>
                     </div>
                     <span className="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">
                       {exp.period}
                     </span>
                   </div>
-                  <p className="text-gray-600 mt-2">{exp.location}</p>
-                  <p className="mt-4 text-gray-700">{exp.description}</p>
+                  <p className="text-gray-600 dark:text-gray-300 mt-2">{exp.location}</p>
+                  <p className="mt-4 text-gray-700 dark:text-gray-300">{exp.description}</p>
                   <ul className="mt-4 space-y-2">
                     {exp.responsibilities.map((responsibility, idx) => (
                       <li key={idx} className="flex items-center gap-2">
                         <span className="w-1.5 h-1.5 bg-blue-600 rounded-full"></span>
-                        <span className="text-gray-600">{responsibility}</span>
+                        <span className="text-gray-600 dark:text-gray-300">{responsibility}</span>
                       </li>
                     ))}
                   </ul>

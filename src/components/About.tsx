@@ -28,9 +28,9 @@ const About = () => {
   }, []);
 
   return (
-    <section id="about" className="py-20 bg-white">
+    <section id="about" className="py-20 bg-white dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl font-bold text-center mb-16">About Me</h2>
+        <h2 className="text-4xl font-bold text-center dark:text-gray-100 mb-16">About Me</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <motion.div
             ref={imageRef}
@@ -53,32 +53,10 @@ const About = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
           >
-            <h3 className="text-2xl font-semibold mb-4">Who I Am</h3>
-            <p className="text-gray-600 mb-6">
+            <h3 className="text-2xl font-semibold dark:text-gray-100 mb-4">Who I Am</h3>
+            <p className="text-gray-600 dark:text-gray-300 mb-6">
               I am a full-stack developer with around 3 years of hands-on experience in building scalable and reliable software solutions. I hold a Master's degree in Computer Science from George Mason University and have worked as a Research Assistant on a NASA-funded project. I specialize in React, Spring Boot, and cloud technologies, focusing on creating efficient and maintainable solutions.
             </p>
-            <div className="space-y-4">
-              <div className="flex items-center">
-                <span className="w-32 font-medium">Location:</span>
-                <span className="text-gray-600">Fairfax, VA</span>
-              </div>
-              <div className="flex items-center">
-                <span className="w-32 font-medium">Experience:</span>
-                <span className="text-gray-600">2+ Years</span>
-              </div>
-              <div className="flex items-center">
-                <span className="w-32 font-medium">Email:</span>
-                <span className="text-gray-600">saivivek116@gmail.com</span>
-              </div>
-              <div className="flex items-center">
-                <span className="w-32 font-medium">GitHub:</span>
-                <span className="text-gray-600">github.com/saivivek116</span>
-              </div>
-              <div className="flex items-center">
-                <span className="w-32 font-medium">LinkedIn:</span>
-                <span className="text-gray-600">linkedin.com/in/vsaivivek</span>
-              </div>
-            </div>
           </motion.div>
         </div>
       </div>

@@ -43,39 +43,39 @@ const Contact = () => {
     }
   }
   return (
-    <section id="contact" className="py-20 bg-gray-50">
+    <section id="contact" className="py-20 bg-gray-50 dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl font-bold text-center mb-16">Get In Touch</h2>
+        <h2 className="text-4xl font-bold text-center mb-16 text-gray-900 dark:text-gray-100">Get In Touch</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           <div>
-            <h3 className="text-2xl font-semibold mb-6">Contact Information</h3>
+            <h3 className="text-2xl font-semibold mb-6 text-gray-900 dark:text-gray-100">Contact Information</h3>
             <div className="space-y-6">
               <div className="flex items-center">
-                <Mail className="w-6 h-6 text-blue-600 mr-4" />
+                <Mail className="w-6 h-6 text-blue-600 dark:text-blue-400 mr-4" />
                 <div>
-                  <p className="font-medium">Email</p>
-                  <p className="text-gray-600">saivivek116@gmail.com</p>
+                  <p className="font-medium text-gray-900 dark:text-gray-100">Email</p>
+                  <p className="text-gray-600 dark:text-gray-300">saivivek116@gmail.com</p>
                 </div>
               </div>
               <div className="flex items-center">
-                <Phone className="w-6 h-6 text-blue-600 mr-4" />
+                <Phone className="w-6 h-6 text-blue-600 dark:text-blue-400 mr-4" />
                 <div>
-                  <p className="font-medium">Phone</p>
-                  <p className="text-gray-600">+1 (571) 307-8419</p>
+                  <p className="font-medium text-gray-900 dark:text-gray-100">Phone</p>
+                  <p className="text-gray-600 dark:text-gray-300">+1 (571) 307-8419</p>
                 </div>
               </div>
               <div className="flex items-center">
-                <MapPin className="w-6 h-6 text-blue-600 mr-4" />
+                <MapPin className="w-6 h-6 text-blue-600 dark:text-blue-400 mr-4" />
                 <div>
-                  <p className="font-medium">Location</p>
-                  <p className="text-gray-600">Fairfax, VA</p>
+                  <p className="font-medium text-gray-900 dark:text-gray-100">Location</p>
+                  <p className="text-gray-600 dark:text-gray-300">Fairfax, VA</p>
                 </div>
               </div>
             </div>
           </div>
           <form className="space-y-6" onSubmit={handleSubmit}>
             <div>
-              <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+              <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                 Name
               </label>
               <input
@@ -84,11 +84,11 @@ const Contact = () => {
                 required
                 value={name}
                 onChange={(e) => { setUsername(e.target.value) }}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+                className="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-blue-600 focus:border-transparent"
               />
             </div>
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+              <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                 Email
               </label>
               <input
@@ -97,11 +97,11 @@ const Contact = () => {
                 required
                 value={email}
                 onChange={(e) => { setEmail(e.target.value) }}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+                className="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-blue-600 focus:border-transparent"
               />
             </div>
             <div>
-              <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
+              <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                 Message
               </label>
               <textarea
@@ -110,12 +110,12 @@ const Contact = () => {
                 required
                 value={message}
                 onChange={(e) => { setMessage(e.target.value) }}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+                className="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-blue-600 focus:border-transparent"
               ></textarea>
             </div>
             <button
               type="submit"
-              className="w-full px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+              className="w-full px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 dark:hover:bg-blue-500 transition-colors"
             >
               Send Message
             </button>

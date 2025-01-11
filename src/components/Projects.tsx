@@ -57,12 +57,12 @@ const projects = [
 
 const Projects = () => {
   return (
-    <section id="projects" className="py-20 bg-gray-50">
+    <section id="projects" className="py-20 bg-gray-50 dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl font-bold text-center mb-16">My Projects</h2>
+        <h2 className="text-4xl font-bold text-gray-900 dark:text-gray-100 text-center mb-16">My Projects</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
-            <div key={index} className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+            <div key={index} className="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
               <div className="aspect-video">
                 <img
                   src={project.image}
@@ -71,8 +71,8 @@ const Projects = () => {
                 />
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-                <p className="text-gray-600 mb-4">{project.description}</p>
+                <h3 className="text-xl text-gray-900 dark:text-gray-100 font-semibold mb-2">{project.title}</h3>
+                <p className="text-gray-600 dark:text-gray-300 mb-4">{project.description}</p>
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.technologies.map((tech, techIndex) => (
                     <span
@@ -86,7 +86,7 @@ const Projects = () => {
                 <div className="flex space-x-4">
                   <a
                     href={project.githubUrl}
-                    className="flex items-center text-gray-600 hover:text-gray-900"
+                    className="flex items-center text-gray-600 dark:text-gray-300 dark:hover:text-gray-100 hover:text-gray-900 "
                     target="_blank"
                     rel="noopener noreferrer"
                   >
