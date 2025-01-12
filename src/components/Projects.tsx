@@ -5,8 +5,8 @@ const projects = [
     title: 'Handshake Helper',
     description: 'Chrome extension that evaluates resume-job description matches and generates screening questions using AI',
     image: '/images/handshake.webp', // You'll need to add project images
-    technologies: ['Python', 'JavaScript', 'FastAPI', 'LangChain', 'ChatGPT API'],
-    githubUrl: 'https://github.com/saivivek116/handshake-helper',
+    technologies: ['Python', 'JavaScript', 'Flask', 'LangChain', 'ChatGPT API'],
+    githubUrl: 'https://github.com/saivivek116/handshake-chrome-extension',
     liveUrl: '',
     features: [
       'Resume-job matching analysis',
@@ -18,7 +18,7 @@ const projects = [
     title: 'Survey Master',
     description: 'Full-stack survey application with real-time progress tracking and feedback',
     image: '/images/survey.png',
-    technologies: ['JavaScript', 'Spring Boot', 'AWS', 'Docker', 'Kubernetes'],
+    technologies: ['JavaScript', 'Spring Boot', 'AWS', 'Docker', 'Kubernetes', 'Jenkins'],
     githubUrl: 'https://github.com/saivivek116/surveyform',
     liveUrl: '',
     features: [
@@ -31,8 +31,8 @@ const projects = [
     title: 'Fitness Application',
     description: 'Fitness guidance website offering personalized gym and diet plans',
     image: '/images/freaking-fit.webp',
-    technologies: ['React', 'Firebase', 'SASS', 'React Router'],
-    githubUrl: 'https://github.com/saivivek116/fitness-app',
+    technologies: ['React', 'Firebase', 'SCSS', 'React Router'],
+    githubUrl: 'https://github.com/saivivek116/freaking_fit',
     liveUrl: '',
     features: [
       'User authentication',
@@ -45,7 +45,7 @@ const projects = [
     description: 'Real-time blog application with dynamic chat functionality',
     image: '/images/college_building.webp',
     technologies: ['Angular', 'Node.js', 'Express', 'MongoDB', 'WebSocket'],
-    githubUrl: 'https://github.com/saivivek116/campus-blogs',
+    githubUrl: 'https://github.com/saivivek116/project',
     liveUrl: '',
     features: [
       'Real-time chat',
@@ -57,12 +57,12 @@ const projects = [
 
 const Projects = () => {
   return (
-    <section id="projects" className="py-20 bg-gray-50 dark:bg-gray-900">
+    <section id="projects" className="py-20 bg-gray-50 dark:bg-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-4xl font-bold text-gray-900 dark:text-gray-100 text-center mb-16">My Projects</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
-            <div key={index} className="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+            <div key={index} className="bg-white dark:bg-gray-900 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
               <div className="aspect-video">
                 <img
                   src={project.image}
