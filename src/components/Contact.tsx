@@ -50,7 +50,7 @@ const Contact = () => {
     event.preventDefault();
     setLoading(true);
     try {
-      const { data, error } = await sendEmail({ name, email, message });
+      const { error } = await sendEmail({ name, email, message });
       if (error) {
         throw new Error(error);
       }
