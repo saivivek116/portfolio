@@ -1,46 +1,71 @@
+'use client';
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin } from 'lucide-react';
+import { sendEmail } from '../actions/sendEmail';
 
+//todo: inspire from gokul
 const Contact = () => {
   const [name, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
+  const [loading, setLoading] = useState(false);
+  // const handleSubmit = async (event: React.FormEvent) => {
+
+  //   event.preventDefault();
+
+  //   const data = {
+  //     name,
+  //     email,
+  //     message,
+  //   };
+
+  //   try {
+  //     const response = await fetch('https://script.google.com/macros/s/AKfycbxLFeHGty8h9nKQ2xhEEBU_HZgEwmZJVl76X7FQWilCStAkYev_Rm-9iyrV7vv4MPA2/exec', { // Replace with your Apps Script URL
+  //       method: 'POST',
+  //       headers: {
+  //         'Content-Type': 'application/json',
+  //       },
+  //       body: JSON.stringify(data),
+  //     });
+
+  //     if (response.ok) {
+  //       const result = await response.json();
+  //       if (result.success) {
+  //         alert('submitted successfully');
+  //         setUsername('');
+  //         setEmail('');
+  //         setMessage('');
+  //       } else {
+  //         // alert(result.error);
+  //       }
+  //     } else {
+  //       alert('Failed to send message.');
+  //     }
+  //   } catch (err) {
+  //     console.log(err);
+  //     // alert('An error occurred. Please try again later.');
+  //   }
+  // }
   const handleSubmit = async (event: React.FormEvent) => {
-
     event.preventDefault();
-
-    const data = {
-      name,
-      email,
-      message,
-    };
-
+    setLoading(true);
     try {
-      const response = await fetch('https://script.google.com/macros/s/AKfycbxLFeHGty8h9nKQ2xhEEBU_HZgEwmZJVl76X7FQWilCStAkYev_Rm-9iyrV7vv4MPA2/exec', { // Replace with your Apps Script URL
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-      });
-
-      if (response.ok) {
-        const result = await response.json();
-        if (result.success) {
-          alert('submitted successfully');
-          setUsername('');
-          setEmail('');
-          setMessage('');
-        } else {
-          // alert(result.error);
-        }
-      } else {
-        alert('Failed to send message.');
+      const { data, error } = await sendEmail({ name, email, message });
+      if (error) {
+        throw new Error(error);
       }
-    } catch (err) {
-      console.log(err);
-      // alert('An error occurred. Please try again later.');
+      alert('Email sent successfully');
+    } catch (e) {
+      alert('Failed to send email');
+      console.log(e);
+    } finally {
+      // console.log(name, email, message);
+      setLoading(false);
+      setUsername('');
+      setEmail('');
+      setMessage('');
     }
+
   }
   return (
     <section id="contact" className="py-20 bg-gray-50 dark:bg-gray-900">
@@ -108,6 +133,7 @@ const Contact = () => {
                 id="message"
                 rows={4}
                 required
+                maxLength={500}
                 value={message}
                 onChange={(e) => { setMessage(e.target.value) }}
                 className="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-blue-600 focus:border-transparent"
@@ -115,6 +141,7 @@ const Contact = () => {
             </div>
             <button
               type="submit"
+              disabled={loading}
               className="w-full px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 dark:hover:bg-blue-500 transition-colors"
             >
               Send Message

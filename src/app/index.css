@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+
+.vertical-timeline-element-content .vertical-timeline-element-date{
+  color: #333;
+}
+
+.dark .vertical-timeline-element-content .vertical-timeline-element-date{
+  color: #fff;
+}
