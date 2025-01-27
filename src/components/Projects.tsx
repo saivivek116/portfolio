@@ -1,4 +1,5 @@
 import { ExternalLink, Github } from 'lucide-react';
+import Image from 'next/image';
 
 const projects = [
   {
@@ -64,9 +65,11 @@ const Projects = () => {
           {projects.map((project, index) => (
             <div key={index} className="bg-white dark:bg-gray-900 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
               <div className="aspect-video">
-                <img
+                <Image
                   src={project.image}
                   alt={project.title}
+                  width={500}
+                  height={500}
                   className="w-full h-full object-fit"
                 />
               </div>

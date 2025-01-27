@@ -1,7 +1,8 @@
-import { createContext, useContext, useEffect, useState } from "react";
+'use client';
+import { createContext, useEffect, useState } from "react";
 
 
-const ThemeContext = createContext({
+export const ThemeContext = createContext({
     theme: 'light',
     toggleTheme: () => { },
 })
@@ -13,7 +14,7 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
         const savedtheme = localStorage.getItem('theme') || 'light';
         setTheme(savedtheme as 'light' | 'dark');
         document.documentElement.classList.toggle('dark', savedtheme === 'dark');
-    },)
+    }, [])
 
     const toggleTheme = () => {
         const newTheme = theme === 'light' ? 'dark' : 'light';
@@ -29,4 +30,3 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     )
 }
 
-export const useTheme = () => useContext(ThemeContext);

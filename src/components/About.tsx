@@ -1,5 +1,7 @@
+'use client';
 import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 const About = () => {
   const imageRef = useRef<HTMLDivElement>(null);
@@ -41,9 +43,11 @@ const About = () => {
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
             <div className="absolute inset-0 bg-gradient-to-b from-transparent to-blue-600/20 group-hover:to-blue-600/30 transition-all duration-300" />
-            <img
+            <Image
               src="/images/profile.webp" // You'll need to add your image
               alt="Sai Vivek Vangaveti"
+              width={768}
+              height={1024}
               className="w-full h-full object-cover object-top transform group-hover:scale-105 transition-transform duration-300"
             />
           </motion.div>

@@ -1,6 +1,7 @@
+'use client';
 import React from 'react';
 import { Menu, X, Github, Linkedin, Mail, Moon, Sun } from 'lucide-react';
-import { useTheme } from '../ThemeContext';
+import { useTheme } from '../hooks/useTheme';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -9,7 +10,6 @@ const Header = () => {
   const navLinks = [
     { href: "#home", text: "Home" },
     { href: "#about", text: "About" },
-    { href: "#education", text: "Education" },
     { href: "#experience", text: "Experience" },
     { href: "#projects", text: "Projects" },
     { href: "#skills", text: "Skills" },
