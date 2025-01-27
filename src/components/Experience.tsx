@@ -1,6 +1,5 @@
 'use client';
 import { BriefcaseIcon, GraduationCapIcon } from 'lucide-react';
-import { title } from 'process';
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 
