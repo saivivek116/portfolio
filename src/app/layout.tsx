@@ -1,10 +1,11 @@
 /* eslint-disable react-refresh/only-export-components */
 import type { Metadata } from 'next'
+import { GoogleAnalytics } from '@next/third-parties/google'
 import './index.css';
 import { ThemeProvider } from '../ThemeContext';
 export const metadata: Metadata = {
-  title: 'My App',
-  description: 'My App is a...',
+  title: 'Sai Vivek Portfolio',
+  description: 'Sai Vivek Vangaveti Portfolio',
 }
 
 export default function RootLayout({
@@ -22,6 +23,7 @@ export default function RootLayout({
           </ThemeProvider>
         </div>
       </body>
+      <GoogleAnalytics gaId="G-LGSZKT0Y5W" />
     </html >
   )
 }
