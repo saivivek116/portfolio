@@ -2,6 +2,7 @@
 import React from 'react';
 import { Menu, X, Github, Linkedin, Mail, Moon, Sun } from 'lucide-react';
 import { useTheme } from '../hooks/useTheme';
+import Link from 'next/link';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -20,7 +21,9 @@ const Header = () => {
     <header className="fixed w-full bg-white/80 backdrop-blur-sm z-50 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
-          <div className="text-2xl font-bold text-gray-900">VSV</div>
+          <div className="text-2xl font-bold text-gray-900">
+            <Link href="/">VSV</Link>
+          </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-6">
