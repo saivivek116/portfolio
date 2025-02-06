@@ -1,5 +1,6 @@
 'use client';
 import React from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
 import { Menu, X, Github, Linkedin, Mail, Moon, Sun } from 'lucide-react';
 import { useTheme } from '../hooks/useTheme';
 import Link from 'next/link';
@@ -49,12 +50,39 @@ const Header = () => {
             <a href="mailto:saivivek116@gmail.com" className="text-gray-700 hover:text-gray-900">
               <Mail size={20} />
             </a>
-            <button
+            {/* <button
               onClick={toggleTheme}
               className="p-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700"
             >
               {theme === 'light' ? <Moon size={20} /> : <Sun size={20} />}
-            </button>
+            </button> */}
+            <AnimatePresence mode="wait" initial={false}>
+              {theme !== 'light' ? (
+                // Moon icon appears from above, exits downward
+                <motion.div
+                  key="moon"
+                  initial={{ y: -20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  exit={{ y: -20, opacity: 0 }}
+                  transition={{ duration: 0.4 }}
+                  onClick={toggleTheme}
+                >
+                  <Moon size={20} />
+                </motion.div>
+              ) : (
+                // Sun icon rises from below, exits upward
+                <motion.div
+                  key="sun"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  exit={{ y: 20, opacity: 0 }}
+                  transition={{ duration: 0.4 }}
+                  onClick={toggleTheme}
+                >
+                  <Sun size={20} />
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
 
           {/* Mobile Menu Button */}
