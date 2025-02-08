@@ -1,19 +1,32 @@
+'use client';
 import { ExternalLink, Github } from 'lucide-react';
 import Image from 'next/image';
+import Badge from './ui/Badge';
 
 const projects = [
+  {
+    title: 'AI Finance Management',
+    description: 'Smart Financial Assistant that helps you manage multiple accounts for everyday expenses and savings goals. Set personalized budgets, track income and spending in real time, receive email alerts for budget limits, and log purchases by snapping receipts. Get actionable insights through Gemini, all in one seamless platform.',
+    image: '/images/aifinance.webp', // You'll need to add project images
+    technologies: ['Nextjs', 'JavaScript', 'Gemini AI', 'LangChain'],
+    githubUrl: 'https://github.com/saivivek116/finance',
+    liveUrl: 'https://github.com/saivivek116/finance',
+    status: "working",
+    features: [
+    ]
+  },
   {
     title: 'Handshake Helper',
     description: 'Chrome extension that evaluates resume-job description matches and generates screening questions using AI',
     image: '/images/handshake.webp', // You'll need to add project images
     technologies: ['Python', 'JavaScript', 'Flask', 'LangChain', 'ChatGPT API'],
     githubUrl: 'https://github.com/saivivek116/handshake-chrome-extension',
-    liveUrl: '',
+    liveUrl: 'https://github.com/saivivek116/handshake-chrome-extension',
     features: [
       'Resume-job matching analysis',
       'AI-powered question generation',
       'Browser extension integration'
-    ]
+    ],
   },
   {
     title: 'Survey Master',
@@ -21,7 +34,7 @@ const projects = [
     image: '/images/survey.png',
     technologies: ['JavaScript', 'Spring Boot', 'AWS', 'Docker', 'Kubernetes', 'Jenkins'],
     githubUrl: 'https://github.com/saivivek116/surveyform',
-    liveUrl: '',
+    liveUrl: 'https://github.com/saivivek116/surveyform',
     features: [
       'Real-time progress tracking',
       'CI/CD with Jenkins',
@@ -34,7 +47,7 @@ const projects = [
     image: '/images/freaking-fit.webp',
     technologies: ['React', 'Firebase', 'SCSS', 'React Router'],
     githubUrl: 'https://github.com/saivivek116/freaking_fit',
-    liveUrl: '',
+    liveUrl: 'https://freaking-fit-v5.web.app/',
     features: [
       'User authentication',
       'Personalized workout plans',
@@ -47,7 +60,7 @@ const projects = [
     image: '/images/college_building.webp',
     technologies: ['Angular', 'Node.js', 'Express', 'MongoDB', 'WebSocket'],
     githubUrl: 'https://github.com/saivivek116/project',
-    liveUrl: '',
+    liveUrl: 'https://github.com/saivivek116/project',
     features: [
       'Real-time chat',
       'CRUD operations',
@@ -57,21 +70,28 @@ const projects = [
 ];
 
 const Projects = () => {
+
+  const handleProjectClick = (url) => {
+    window.open(url, "_blank");
+  }
   return (
     <section id="projects" className="py-20 bg-gray-50 dark:bg-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-4xl font-bold text-gray-900 dark:text-gray-100 text-center mb-16">My Projects</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
-            <div key={index} className="bg-white dark:bg-gray-900 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+            <div key={index} className="bg-white dark:bg-gray-900 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow cursor-pointer relative" onClick={() => handleProjectClick(project.liveUrl)}>
+              {project?.status && <Badge className='bg-yellow-300 !text-black absolute top-2 right-2'>Working</Badge>}
               <div className="aspect-video">
                 <Image
                   src={project.image}
                   alt={project.title}
                   width={500}
+                  // objectFit='contain'
                   height={500}
-                  className="w-full h-full object-fit"
+                  className="w-full h-full object-contain"
                 />
+
               </div>
               <div className="p-6">
                 <h3 className="text-xl text-gray-900 dark:text-gray-100 font-semibold mb-2">{project.title}</h3>
@@ -96,15 +116,16 @@ const Projects = () => {
                     <Github size={20} className="mr-2" />
                     Code
                   </a>
-                  {project?.liveUrl && <a
-                    href={project?.liveUrl}
-                    className="flex items-center text-gray-600 hover:text-gray-900"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <ExternalLink size={20} className="mr-2" />
-                    Live Demo
-                  </a>
+                  {
+                    // project?.liveUrl && <a
+                    //   href={project?.liveUrl}
+                    //   className="flex items-center text-gray-600 hover:text-gray-900"
+                    //   target="_blank"
+                    //   rel="noopener noreferrer"
+                    // >
+                    //   <ExternalLink size={20} className="mr-2" />
+                    //   Live Demo
+                    // </a>
                   }
                 </div>
               </div>
