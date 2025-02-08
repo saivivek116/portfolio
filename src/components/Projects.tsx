@@ -71,7 +71,7 @@ const projects = [
 
 const Projects = () => {
 
-  const handleProjectClick = (url) => {
+  const handleProjectClick = (url: string) => {
     window.open(url, "_blank");
   }
   return (
