@@ -117,7 +117,6 @@ export default function CopyClipPage() {
                     <p className="text-center text-gray-500 dark:text-gray-400">No clips saved yet. Add one above!</p>
                 ) : (
                     <ClipsList clips={clips} 
-                    handleAddClip={handleAddClip}
                      handleDeleteClip={handleDeleteClip}
                      />
                 ))

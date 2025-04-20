@@ -2,21 +2,32 @@ import { useMemo, useState } from "react";
 
 
 // Simple URL validation function
-const isValidUrl = (string) => {
+const isValidUrl = (string: string) => {
     if (typeof string !== 'string') return false;
     try {
         const url = new URL(string);
         // Check if it starts with http:// or https:// for basic web URL validation
         return url.protocol === 'http:' || url.protocol === 'https:';
-    } catch (_) {
+    } catch (err) {
+        console.log(err);
         return false;
     }
 };
 
-const ClipsList = ({ clips, handleAddClip, handleDeleteClip }) => {
+interface Clip {
+    id: string;
+    content: string;
+}
+
+interface ClipsListProps {
+    clips: Clip[];
+    handleDeleteClip: (id: string) => void;
+}
+
+const ClipsList = ({ clips, handleDeleteClip }: ClipsListProps) => {
     const [copiedIndex, setCopiedIndex] = useState(-1);
 
-    const copyToClipboard = (text, index) => {
+    const copyToClipboard = (text: string, index: number) => {
         navigator.clipboard.writeText(text)
             .then(() => {
                 console.log('Copied:', text);
@@ -41,7 +52,7 @@ const ClipsList = ({ clips, handleAddClip, handleDeleteClip }) => {
                     <div className="flex-grow mr-4 min-w-0">
                         <p
                             className="text-gray-800 dark:text-gray-200 break-words cursor-pointer truncate"
-                            title={clip}
+                            title={clip.content}
                             onClick={() => copyToClipboard(clip.content, index)}
                         >
                             {clip.content}
@@ -64,7 +75,7 @@ const ClipsList = ({ clips, handleAddClip, handleDeleteClip }) => {
                         {/* Open URL Button (Conditional) */}
                         {isUrl && (
                             <button
-                                onClick={() => window.open(clip, '_blank', 'noopener,noreferrer')}
+                                onClick={() => window.open(clip.content, '_blank', 'noopener,noreferrer')}
                                 className="px-3 py-1 bg-sky-500 text-white rounded text-sm hover:bg-sky-600 focus:outline-none focus:ring-2 focus:ring-sky-400 focus:ring-offset-1 dark:focus:ring-offset-gray-800 flex items-center justify-center"
                                 title="Open link in new tab"
                             >

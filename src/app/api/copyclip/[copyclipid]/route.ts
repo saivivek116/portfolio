@@ -3,11 +3,11 @@ import { Redis } from "@upstash/redis";
 
 const redis = Redis.fromEnv();
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
+ 
 export async function DELETE(
-    request: NextRequest,
-    { params }: { params: { copyclipid: string } }
-) {
+    _request: NextRequest,
+    { params }: { params: Promise<{ copyclipid: string }> }
+): Promise<NextResponse> {
     const {copyclipid} = await params;
 
     if (!copyclipid) {
