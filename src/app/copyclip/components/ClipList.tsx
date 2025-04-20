@@ -97,7 +97,7 @@ const ClipsList = ({ clips, handleDeleteClip }: ClipsListProps) => {
                 </div>
             );
         });
-    }, [clips]);
+    }, [clips, copiedIndex, handleDeleteClip]);
 
     return clip_items;
 }
