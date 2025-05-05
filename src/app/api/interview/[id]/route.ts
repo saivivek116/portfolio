@@ -6,7 +6,7 @@ const INTERVIEW_PREFIX = "interview:";
 
 // GET a specific question by ID
 export async function GET(
-  request: NextRequest,
+  _request: NextRequest,
   { params }: { params: Promise<{ id: string }> }
 ) {
   try {
@@ -48,7 +48,7 @@ export async function GET(
           );
         } else {
           // Try to parse as JSON
-          parsedData = JSON.parse(data);
+          parsedData = JSON.parse(data as string);
         }
       }
       
@@ -129,7 +129,7 @@ export async function PUT(
 
 // DELETE a question
 export async function DELETE(
-  request: NextRequest,
+  _request: NextRequest,
   { params }: { params: Promise<{ id: string }> }
 ) {
   try {

@@ -41,7 +41,7 @@ export async function GET() {
               parsedValue = { question: "", answers: [] };
             } else {
               // Try to parse as JSON
-              parsedValue = JSON.parse(value);
+              parsedValue = typeof value === 'string' ? JSON.parse(value) : (value || {});
             }
           }
           
