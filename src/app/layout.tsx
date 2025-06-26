@@ -1,4 +1,3 @@
-/* eslint-disable react-refresh/only-export-components */
 import type { Metadata } from 'next'
 import { GoogleAnalytics } from '@next/third-parties/google'
 import './index.css';

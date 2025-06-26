@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 //indexing the data
 import { PDFLoader } from "@langchain/community/document_loaders/fs/pdf";
 import { RecursiveCharacterTextSplitter } from "@langchain/textsplitters";
@@ -8,7 +7,6 @@ import { PineconeStore } from "@langchain/pinecone";
 import * as dotenv from 'dotenv';
 dotenv.config();
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 async function run(){
     const pdfLoader = new PDFLoader("./src/data/resume.pdf");
     const data = await pdfLoader.load();   
@@ -27,7 +25,6 @@ async function run(){
     });
     const pineconeIndex = pinecone.Index(process.env.PINECONE_INDEX!);
 
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     await PineconeStore.fromDocuments(documents, embeddings, {
             pineconeIndex,
             // Maximum number of batch requests to allow at once. Each batch is 1000 vectors.
