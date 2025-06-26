@@ -1,6 +1,5 @@
 'use client';
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin } from 'lucide-react';
 import { sendEmail } from '../actions/sendEmail';
 import AppointmentButton from './Appointment';
 
@@ -73,32 +72,6 @@ const Contact = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-4xl font-bold text-center mb-16 text-gray-900 dark:text-gray-100">Get In Touch</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          <div>
-            <h3 className="text-2xl font-semibold mb-6 text-gray-900 dark:text-gray-100">Contact Information</h3>
-            <div className="space-y-6">
-              <div className="flex items-center">
-                <Mail className="w-6 h-6 text-blue-600 dark:text-blue-400 mr-4" />
-                <div>
-                  <p className="font-medium text-gray-900 dark:text-gray-100">Email</p>
-                  <p className="text-gray-600 dark:text-gray-300">saivivek116@gmail.com</p>
-                </div>
-              </div>
-              <div className="flex items-center">
-                <Phone className="w-6 h-6 text-blue-600 dark:text-blue-400 mr-4" />
-                <div>
-                  <p className="font-medium text-gray-900 dark:text-gray-100">Phone</p>
-                  <p className="text-gray-600 dark:text-gray-300">+1 (571) 307-8419</p>
-                </div>
-              </div>
-              <div className="flex items-center">
-                <MapPin className="w-6 h-6 text-blue-600 dark:text-blue-400 mr-4" />
-                <div>
-                  <p className="font-medium text-gray-900 dark:text-gray-100">Location</p>
-                  <p className="text-gray-600 dark:text-gray-300">Fairfax, VA</p>
-                </div>
-              </div>
-            </div>
-          </div>
           <div>
             <form className="space-y-6" onSubmit={handleSubmit}>
               <div>
