@@ -59,7 +59,9 @@ const About = () => {
           >
             <h3 className="text-2xl font-semibold dark:text-gray-100 mb-4">Who I Am</h3>
             <p className="text-gray-600 dark:text-gray-300 mb-6">
-              I am a full-stack developer with around 3 years of hands-on experience in building scalable and reliable software solutions. I hold a Master's degree in Computer Science from George Mason University and have worked as a Research Assistant on a NASA-funded project. I specialize in React, Spring Boot, and cloud technologies, focusing on creating efficient and maintainable solutions.
+              Passionate Full Stack Engineer with 4 years of experience building customer facing applications, No Code tools, and automation tools using React, Next.js, Node.js, and Spring Boot. Proven ability to ship end-to-end features with a customer-first mindset.
+Certified AWS Developer with strong experience in CI/CD, micro-services, RESTful API, GraphQL, scalable system design.
+Experienced working within agile. Innovating Applications using GenAI is my recent focus. 
             </p>
           </motion.div>
         </div>
