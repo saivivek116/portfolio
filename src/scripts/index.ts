@@ -8,9 +8,9 @@ import * as dotenv from 'dotenv';
 dotenv.config();
 
 async function run(){
-    const pdfLoader = new PDFLoader("./src/data/resume.pdf");
+    const pdfLoader = new PDFLoader("./src/data/Sai_Vivek_Vangaveti_Knowledge_Document.pdf");
     const data = await pdfLoader.load();   
-    const splitter = new RecursiveCharacterTextSplitter({ chunkSize: 300, chunkOverlap: 100 });
+    const splitter = new RecursiveCharacterTextSplitter({ chunkSize: 1000, chunkOverlap: 500 });
     const documents = await splitter.splitDocuments(data);
     console.log(documents[0]);
     console.log("length", documents.length);
@@ -32,7 +32,7 @@ async function run(){
     });
     console.log("successfully upserted embeddings into vector store");
     const queryVector = await embeddings.embedQuery(
-    "where did he complete his masters?"
+    "Tell me about recent project?"
     );
 
     const queryResponse = await pineconeIndex
