@@ -10,7 +10,7 @@ const journey = [
     title: 'Frontend Engineer',
     company: 'The Donovan\'s Venom',
     location: 'Remote',
-    period: 'Oct 2024 - Present',
+    period: 'Jan 2025 - Present',
     icon: <BriefcaseIcon />,
     responsibilities: " Developed responsive, pixel perfect and zero-latency web pages for a music application, including login, payment, books, and checkout pages, using NextJS, TypeScript based on Figma designs."
   },
